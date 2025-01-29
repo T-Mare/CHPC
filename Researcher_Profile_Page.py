@@ -3,15 +3,6 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-import subprocess
-import sys
-
-# Ensure seaborn is installed before import
-try:
-    import seaborn as sns
-except ModuleNotFoundError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "seaborn"])
-    import seaborn as sns
 
 # Streamlit Title
 st.title("Feature Distribution Analysis")
@@ -30,7 +21,7 @@ color = st.select_slider(
 )
 st.write("Selected", color)
 bin  = st.slider("How many bins do you want?", 10, 50, 10, step=5)
-st.write("I'm ", bin, "years old")
+st.write("Total bins: ", bin)
 
 # File Upload
 uploaded_file = st.file_uploader("Upload a CSV dataset", type=["csv"])
@@ -60,7 +51,6 @@ else:
     st.info("Please upload a CSV file to proceed.")
 
 st.title("#FLAG#############")
-
 
 
 
