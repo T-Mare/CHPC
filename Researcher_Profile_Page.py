@@ -3,6 +3,16 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+import subprocess
+import sys
+
+# Ensure seaborn is installed before import
+try:
+    import seaborn as sns
+except ModuleNotFoundError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "seaborn"])
+    import seaborn as sns
+
 # Streamlit Title
 st.title("Feature Distribution Analysis")
 
